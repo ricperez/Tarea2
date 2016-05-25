@@ -27,6 +27,7 @@ namespace ConsoleApplication2
             static int multiplicacion = 0;
             static double division = 0;
             static int monto = 0;
+            static int sumaTotal = 0;
             static DateTime now = DateTime.Now;
             static int[] cuenta = new int[1]{0};
             
@@ -51,9 +52,9 @@ namespace ConsoleApplication2
                 {
                     if (monto <= cuenta[0])
                     {
-                        do{
+                        //do{
 
-                        }while();
+                        //}while();
                     }
                     else {
                         Console.WriteLine("El monto que quiere retirer es superior al monto de su cuenta");
@@ -113,7 +114,10 @@ namespace ConsoleApplication2
                 Console.WriteLine("La cantidad de monedas de denominacion 25 son " + contadorCantidad25 + " y suman " + contador25);
                 Console.WriteLine("La cantidad de monedas de denominacion 50 son " + contadorCantidad50 + " y suman " + contador50);
                 Console.WriteLine("La cantidad de monedas de denominacion 100 son " + contadorCantidad100 + " y suman " + contador100);
-                Console.WriteLine("La cantidad de monedas de denominacion 500 son " + contadorCantidad500 + " y suman " + contador500);                
+                Console.WriteLine("La cantidad de monedas de denominacion 500 son " + contadorCantidad500 + " y suman " + contador500);
+                sumaTotal = contador5 + contador10 + contador25 + contador50 + contador100 + contador500;
+                cuenta[0] = cuenta[0] + sumaTotal;
+                Console.WriteLine("\nSu cuenta se ha actualizado, su monto al dia de hoy es de " + cuenta[0] + " colones");
                 Console.ReadKey();
             }
 
@@ -126,13 +130,13 @@ namespace ConsoleApplication2
                     Console.WriteLine("Ingrese el monto en colones a convertir a dolares");
                     monto = int.Parse(Console.ReadLine());
                     division = monto / 546;
-                    Console.WriteLine("El tipo de cambio " + now + " $" + division);
+                    Console.WriteLine("El tipo de cambio " + now + " " + " $" + division);
                 }
                 else {
                     Console.WriteLine("Ingrese el monto en dolares a convertir a colones");
                     monto = int.Parse(Console.ReadLine());
                     multiplicacion = monto * 534;
-                    Console.WriteLine("El tipo de cambio " + now + " ₡" + multiplicacion);
+                    Console.WriteLine("El tipo de cambio " + now + " " + multiplicacion + " colones");
                 }
                 Console.ReadKey();
             }
